@@ -20,8 +20,13 @@ function getNextStateIndex(trafficLight) {
   // - if the color is green, it will turn to orange
   // - if the color is orange, it will turn to red
   // - if the color is red, it will turn to green
-  
+ let trafficLightStateIndex =  trafficLight.stateIndex;
+ trafficLightStateIndex++;
+return trafficLightStateIndex;
+
 }
+
+
 
 // This function loops for the number of seconds specified by the `secs`
 // parameter and then returns.
