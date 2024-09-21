@@ -21,7 +21,9 @@ function getNextStateIndex(trafficLight) {
   // - if the color is orange, it will turn to red
   // - if the color is red, it will turn to green
  let trafficLightStateIndex =  trafficLight.stateIndex;
+ if(trafficLightStateIndex < 2){
  trafficLightStateIndex++;
+ }else{trafficLightStateIndex=0;}
 return trafficLightStateIndex;
 
 }
@@ -36,7 +38,7 @@ return trafficLightStateIndex;
 function waitSync(secs) {
   const start = Date.now();
   while (Date.now() - start < secs * 1000) {
-    // nothing do to here
+ 
   }
 }
 
@@ -49,7 +51,7 @@ function main() {
   getCurrentState(trafficLight);
 
 
-  for (let cycle = 0; cycle <= 6; cycle++) {
+  for (let cycle = 0; cycle < 6; cycle++) {
     const currentState = getCurrentState(trafficLight);
     console.log(cycle, "The traffic light is now", currentState);
 
