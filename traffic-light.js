@@ -14,7 +14,7 @@ function getCurrentState(trafficLight) {
 }
 
 
-function (trafficLight) {
+function getNextStateIndex(trafficLight) {
   // TODO
   // Return the index of the next state of the `trafficLight` such that:
   // - if the color is green, it will turn to orange
