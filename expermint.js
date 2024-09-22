@@ -3,6 +3,16 @@
 function runExperiment(sampleSize) {
   const valueCounts = [0, 0, 0, 0, 0, 0];
 
+
+  for(let i = 0; i < sampleSize; i++){
+
+    let randomNumber = Math.floor(Math.random()*6)+1;
+
+    
+
+         valueCounts[randomNumber - 1]++ ;
+  
+  }
   // TODO
   // Write a for loop that iterates `sampleSize` times (sampleSize is a number).
   // In each loop iteration:
@@ -12,8 +22,16 @@ function runExperiment(sampleSize) {
   //    value from the previous step. Use the first element of `valueCounts`
   //    for keeping a count how many times the value 1 is thrown, the second
   //    element for value 2, etc.
-
   const results = [];
+    let die = 0;
+
+  for (const element of valueCounts) {
+   let percentage =  (element/sampleSize)*100;
+   let stringPercentage = percentage.toPrecision(4);
+   die++;
+   results.push(`The percentage of  Number ${die} on the Die  = ${stringPercentage}\n`);
+  
+  }
 
   // TODO
   // Write a for..of loop for the `valueCounts` array created in the previous
@@ -24,13 +42,19 @@ function runExperiment(sampleSize) {
   // 2. Convert the computed percentage to a number string with a precision of
   //    two decimals, e.g. '14.60'.
   // 3. Then push that string onto the `results` array.
-
   return results;
+
 }
 
 function main() {
   const sampleSizes = [100, 1000, 1000000];
 
+  for (const element of sampleSizes) {
+
+   const results =  runExperiment(element);
+      console.log(results);
+
+  }
   // TODO
   // Write a for..of loop that calls the `runExperiment()` function for each
   // value of the `sampleSizes` array.
